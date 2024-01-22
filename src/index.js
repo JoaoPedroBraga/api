@@ -48,7 +48,7 @@ app.get('/livros', async  (req, res) => {
     return  res.status(200).json(livros);
 });
 
-app.get('/edicao/:id', async (req, res) => {
+app.get('/livros/:id', async (req, res) => {
     try {
         const livro = await LivroModel.findOne({id: req.params.id});
         return  res.status(200).json(livro);
@@ -60,7 +60,7 @@ app.get('/edicao/:id', async (req, res) => {
     }
 });
 
-app.put('/edicao/:id', async (req, res) => {
+app.put('/livros/:id', async (req, res) => {
     const livro = await LivroModel.updateOne({id: req.params.id}, req.body);
 
     return  res.status(200).json(livro);
@@ -73,8 +73,6 @@ app.delete('/livros/:id', async (req, res) => {
         data: livro
     });
 });
-
-
 
 app.listen(8080, () => {    
     console.log('servidor Funcionando na porta 8080')
