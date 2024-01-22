@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-app.post('/cadastro', async (req, res) => {
+app.post('/livros', async (req, res) => {
     if (!req.body.id){
         return res.status(400).json({ message: "O campo ID e obrigtório"})   
     }
@@ -73,6 +73,8 @@ app.delete('/livros/:id', async (req, res) => {
         data: livro
     });
 });
+
+
 
 app.listen(8080, () => {    
     console.log('servidor Funcionando na porta 8080')
