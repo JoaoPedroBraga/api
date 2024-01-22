@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-app.post('/livros', async (req, res) => {
+app.post('/cadastro', async (req, res) => {
     if (!req.body.id){
         return res.status(400).json({ message: "O campo ID e obrigtório"})   
     }
@@ -48,7 +48,7 @@ app.get('/livros', async  (req, res) => {
     return  res.status(200).json(livros);
 });
 
-app.get('/livros/:id', async (req, res) => {
+app.get('/edicao/:id', async (req, res) => {
     try {
         const livro = await LivroModel.findOne({id: req.params.id});
         return  res.status(200).json(livro);
@@ -60,7 +60,7 @@ app.get('/livros/:id', async (req, res) => {
     }
 });
 
-app.put('/livros/:id', async (req, res) => {
+app.put('/edicao/:id', async (req, res) => {
     const livro = await LivroModel.updateOne({id: req.params.id}, req.body);
 
     return  res.status(200).json(livro);
