@@ -16,5 +16,5 @@ Link para a APIEndpoints
 
 #### Link para a API
 
-Explore a API de Gerenciamento de Biblioteca em [Biblioteca API](https://api-xi-plum.vercel.app/livros).
+Explore a API de Gerenciamento de Biblioteca em [Biblioteca API]().
 
